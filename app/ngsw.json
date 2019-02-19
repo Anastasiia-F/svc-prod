@@ -1,0 +1,123 @@
+{
+  "configVersion": 1,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/auth-auth-module-ngfactory.ffc9f9ae99cc5ffadd4f.js",
+        "/common.6f47cc669f7e129b5053.js",
+        "/dashboard-dashboard-module-ngfactory.ae24a43262dc4d66b10e.js",
+        "/favicon.ico",
+        "/home-home-module-ngfactory.8baab96cbe50b69803bc.js",
+        "/index.html",
+        "/main.5a271f3facb99bf88a34.js",
+        "/payment-details-payment-details-module-ngfactory.96420591b1f0de28d934.js",
+        "/polyfills.fbd112987568f546c573.js",
+        "/runtime.474b365675bc17b6b2b6.js",
+        "/select-plan-select-plan-module-ngfactory.eb2c15cf950d0f9427be.js",
+        "/styles.fbb0d2b4fcc5ebdf060f.css",
+        "/vendor.6fbc91a349e692010b7c.js"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/fonts/Lato/Lato-Bold.ttf",
+        "/assets/fonts/Lato/Lato-Regular.ttf",
+        "/assets/fonts/Museo/Museo300-Regular.otf",
+        "/assets/fonts/Museo/Museo500-Regular.otf",
+        "/assets/fonts/Museo/Museo700-Regular.otf",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/icons/people.png",
+        "/assets/icons/telephone.png",
+        "/assets/images/alarm.png",
+        "/assets/images/best-seller.png",
+        "/assets/images/car-example.png",
+        "/assets/images/flag_uk.png",
+        "/assets/images/guard.png",
+        "/assets/images/heart-msg.png",
+        "/assets/images/lock.png",
+        "/assets/images/mastercard.png",
+        "/assets/images/multi-cars.png",
+        "/assets/images/pay-by-card.png",
+        "/assets/images/pay-by-paypal.png",
+        "/assets/images/single-car.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/fonts/Lato/Lato-Bold.ttf": "c330d59f3e64e07a2571c2ba4f4109b20a168f69",
+    "/assets/fonts/Lato/Lato-Regular.ttf": "127f241871a9fe42cd8d073a0835410f3824d57c",
+    "/assets/fonts/Museo/Museo300-Regular.otf": "7493aed318c4f7216def033563098e4b4e38d048",
+    "/assets/fonts/Museo/Museo500-Regular.otf": "acf25e45d28dbf30b2fb0ecfb2422d4b7b7b7e68",
+    "/assets/fonts/Museo/Museo700-Regular.otf": "529074fce78d0cc4f7cb9c60994286941b09b31a",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/icons/people.png": "8a72de54987d97be8823b0f77186cb9bde839731",
+    "/assets/icons/telephone.png": "27a951c4836a99dfc155c925c0d49e7e23926d7b",
+    "/assets/images/alarm.png": "db17ccb15728aa97188ac2f4fdaaceca2a305c04",
+    "/assets/images/best-seller.png": "9085a8d12cb8072a3210cf68286e605200836a3e",
+    "/assets/images/car-example.png": "5f0b5519c05aa79f2d5c8604e4a8e06ded8a8d3b",
+    "/assets/images/flag_uk.png": "2158a666a5317d09629997e37eac2eeca80f2313",
+    "/assets/images/guard.png": "a9e48a9cf9835eb5d50b62f09952bc079e6eb900",
+    "/assets/images/heart-msg.png": "5dc6a251aa35c6455500cc7124642620cd89ba13",
+    "/assets/images/lock.png": "79275cb92099d186eea51c6980047aff61875ff5",
+    "/assets/images/mastercard.png": "894c5ee2e9a37a01e75da31030e6cebda076481e",
+    "/assets/images/multi-cars.png": "5b3d765de7adeab9334f5e74b96c9feff253ada3",
+    "/assets/images/pay-by-card.png": "0b3e83d7e051746b1a32c5356a04e2de6299a219",
+    "/assets/images/pay-by-paypal.png": "fbd78a41c54a9fdcf2cfab0681af432a85fc0c26",
+    "/assets/images/single-car.png": "b471242ef9c57e5afdc9c8edae2f1f9974e1446e",
+    "/auth-auth-module-ngfactory.ffc9f9ae99cc5ffadd4f.js": "b236caecf866eca55219d8ee4243282c6fa1ddce",
+    "/common.6f47cc669f7e129b5053.js": "2d96d23fd598783ddcd8c1da68becb99f84cc662",
+    "/dashboard-dashboard-module-ngfactory.ae24a43262dc4d66b10e.js": "5fdb750e6f492fee0867206f7f049e779a91b282",
+    "/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/home-home-module-ngfactory.8baab96cbe50b69803bc.js": "8ba7cf53628503c4776addcdf611bccb9f01fb27",
+    "/index.html": "65fdbe3cc065557c6e2e833f41a2ed7134b1ca6b",
+    "/main.5a271f3facb99bf88a34.js": "9bf644f6b4f6c4121862b7da782dbcb59acaf130",
+    "/payment-details-payment-details-module-ngfactory.96420591b1f0de28d934.js": "f4463da38d40c8cabb9b6be7414e3cd023eee145",
+    "/polyfills.fbd112987568f546c573.js": "1ad0392c28f2e15238ebe11941afeb2f0d998b98",
+    "/runtime.474b365675bc17b6b2b6.js": "35d761098997660230ae8aba617f3d40076b6523",
+    "/select-plan-select-plan-module-ngfactory.eb2c15cf950d0f9427be.js": "fa8efb0ec0f0ec223d22f6fbbb63cc5d21e2a8b0",
+    "/styles.fbb0d2b4fcc5ebdf060f.css": "d58e3a416427d5700fb96c2775eaa0cc5f6e9530",
+    "/vendor.6fbc91a349e692010b7c.js": "a47dfbcd7433ef0864dedda9e5d7ff5a54091086"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
