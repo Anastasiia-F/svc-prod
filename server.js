@@ -4,10 +4,10 @@ const path = require('path');
 
 const app = express();
 
-const port = process.env.PORT || 7000;
+const port = 80;
 
 app.use(express.static(__dirname + '/app'));
-app.set('port', (process.env.PORT || 7000));
+app.set('port', port);
 
 app.get('/', (request, response) => {
   response.sendFile(path.join(__dirname))
