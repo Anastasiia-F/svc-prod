@@ -4,7 +4,7 @@ const path = require('path');
 
 const app = express();
 
-const port = 80;
+const port = 7000;
 
 app.use(express.static(__dirname + '/app'));
 app.set('port', port);
@@ -15,6 +15,6 @@ app.get('/', (request, response) => {
 
 const server = http.createServer(app);
 
-server.listen(port, ()=>{
+server.listen(port, ()=> {
   console.log('Working on ' + port)
 });
