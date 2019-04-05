@@ -6,7 +6,7 @@ const app = express();
 
 const port = 7000;
 
-app.use(express.static(__dirname + '/app'));
+app.use(express.static(__dirname + '/front-end'));
 app.set('port', port);
 
 app.get('/', (request, response) => {

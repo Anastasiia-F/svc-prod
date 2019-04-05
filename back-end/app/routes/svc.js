@@ -16,9 +16,6 @@ router.route('/summary/:registration')
 router.route('/:datapackage/:registration')
   .get(controller.getDataByPackage);
 
-router.route('/success')
-  .get(controller.getDataSuccess);
-
 router.route('/fail')
   .get(controller.getDataFail);
 

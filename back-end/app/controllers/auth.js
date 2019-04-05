@@ -100,72 +100,79 @@ exports.postSignup = (req, res, next) => {
         return res.status(500).json(response);
       });
   };
-  const findOneCallBac =  (err, existingUser) => {
-	  if (err) { return next(err); }
-	  if (existingUser) {
-		  return res.status(400).json({ msg: 'Email already registered' });
-	  }
 
-	  // TODO:
-	  // Loop through credits and check all fields are there
-	  // refactor to improve readablity
+  const createNewUser =  (err, existingUser) => {
+    if (err) { return next(err); }
+    if (existingUser) {
+      return res.status(400).json({ msg: 'Email already registered' });
+    }
 
-	  const { credits } = req.body;
-		if (!credits || !Array.isArray(credits)) {
-			return res.status(400).json({ msg: 'credits is not valid' });
-		}
+    // TODO:
+    // Loop through credits and check all fields are there
+    // refactor to improve readablity
 
-		const user = new User({
-			name: req.body.name,
-			phone: req.body.phone,
-			creditCard: req.body.creditCard,
-			email: req.body.email,
-			credits: [],
-			reports: []
-		});
+    const { credits } = req.body;
+    if (!credits || !Array.isArray(credits)) {
+      return res.status(400).json({ msg: 'credits is not valid' });
+    }
 
-		const expiry = Date.now() + (2 * 365 * 24 * 60 * 60 * 1000); // 2 years
+    const user = new User({
+      name: req.body.name,
+      phone: req.body.phone,
+      creditCard: req.body.creditCard,
+      email: req.body.email,
+      credits: [],
+      reports: []
+    });
 
-		forEachSeries(credits, async (credit, i) => {
-			let hasReport;
-			let reportId;
+    const expiry = Date.now() + (2 * 365 * 24 * 60 * 60 * 1000); // 2 years
 
-			// Use credit to generate report.
-			if (credit.generateReport && credit.creditType && credit.registration) {
-				const report = await SVC.generateReport(credit.creditType, credit.registration);
-				if (report instanceof Error) throw report;
+    forEachSeries(credits, async (credit, i) => {
+      let hasReport;
+      let reportId;
 
-				user.reports.push(report);
-				hasReport = true;
-				reportId = report._id;
-			}
+    // Use credit to generate report.
+      if (credit.creditType && credit.registration) {
+        const report = await SVC.generateReport(credit.creditType, credit.registration);
 
-			const newCredit = new Credit({
-				creditType: credit.creditType,
-				expiresAt: expiry,
-				hasReport,
-				reportId
-			});
-			user.credits.push(newCredit);
+        if (report instanceof Error) throw report;
 
-			if (i === credits.length - 1) {
-				user.save((err) => {
-					if (err) { return next(err); }
-					req.logIn(user, (err) => {
-						if (err) { return next(err); }
-						sendConfirmationEmail(user, {
-							msg: 'Signup successful',
-							credits: user.credits,
-							reports: user.reports
-						});
-					});
-				});
-			}
+        user.reports.push(report);
+        hasReport = true;
+        reportId = report._id;
+      }
+
+      const newCredit = new Credit({
+        creditType: credit.creditType,
+        expiresAt: expiry,
+        hasReport,
+        reportId
+      });
+      user.credits.push(newCredit);
+
+      if (i === credits.length - 1) {
+        user.save((err) => {
+          if (err) { return next(err); }
+
+          req.logIn(user, (err) => {
+            if (err) { return next(err); }
+
+            sendConfirmationEmail(
+             user, {
+               msg: 'Signup successful',
+               credits: user.credits,
+               reports: user.reports
+              });
+          });
+
+        });
+      }
 		})
 		.catch(err => res.status(500).json({ msg: err.message }));
-  };
+};
 
-	User.findOne({ email: req.body.email }, findOneCallBac);
+	User.findOne({ email: req.body.email }, createNewUser);
+
 };
 
 
@@ -460,6 +467,7 @@ exports.postResetToken = (req, res, next) => {
  * Delete user account.
  */
 exports.deleteAccount = (req, res, next) => {
+
   User.deleteOne({ email: req.user }, (err) => {
     if (err) { return next(err); }
     req.logout();

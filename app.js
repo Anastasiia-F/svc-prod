@@ -1,6 +1,6 @@
 const path              = require('path');
 const logger            = require('morgan');
-const dotenv            = require('dotenv');
+const dotEnv            = require('dotenv');
 const express           = require('express');
 const mongoose          = require('mongoose');
 const passport          = require('passport');
@@ -18,7 +18,7 @@ const cors              = require('cors');
 /**
  * Load environment variables from .env file.
  */
-dotenv.load({ path: '.env' });
+dotEnv.load({ path: '.env' });
 
 
 /**
@@ -26,7 +26,7 @@ dotenv.load({ path: '.env' });
  */
 const app = express();
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 
 /**
@@ -51,12 +51,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.disable('x-powered-by');
 app.use(expressValidator());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('front-end'));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 /**
  * Enable CORS
 */
-app.use(cors({ origin: process.env.CORS_ORIGIN, credentials: true }));
+// app.use(cors({ origin: process.env.CORS_ORIGIN, credentials: true }));
 
 /**
  * Session and Passport configuration.
@@ -74,13 +75,13 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-require('./config/passport');
+require('./back-end/app/config/passport');
 
 
 /**
  * Route handlers.
  */
-require('./routes')(app);
+require('./back-end/app/routes')(app);
 
 
 /**
@@ -96,8 +97,13 @@ if (process.env.NODE_ENV === 'development') {
   });
 }
 
-app.get('/', function(request, response) {
-  response.send('Hello SVC!!')
+/**
+ * Front part.
+ */
+
+app.get('/', (request, response) => {
+  console.log(red('Hello'));
+  response.sendFile(path.join(__dirname))
 });
 
 
